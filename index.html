@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Madson Damasceno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #header {
+            background: url('img/showcase.jpg') no-repeat center center;
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+        }
+
+        header p {
+            font-size: 1.5rem;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Madson Damasceno</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about">Sobre Mim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header with Background Image -->
+    <header class="bg-dark text-white text-center py-5" id="header">
+        <div class="container">
+            <h1 class="display-4">Madson Damasceno</h1>
+            <p class="lead">Desenvolvedor Web</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Sobre Mim</h2>
+            <p class="lead text-center">Sou um desenvolvedor web apaixonado por criar experiências interativas e funcionais. Tenho experiência em HTML, CSS, e JavaScript, além de uma sólida compreensão de design responsivo e usabilidade.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">Contato</h2>
+            <ul class="list-unstyled text-center">
+                <li>Email: <a href="mailto:madsondamasceno90@gmail.com">madsondamasceno90@gmail.com</a></li>
+                <li>Telefone: <a href="tel:+5591993888890">(91) 99388-8890</a></li>
+                <li>WhatsApp Comercial: <a href="https://wa.me/5591984868651">(91) 98486-8651</a></li>
+            </ul>
+
+            <!-- Contact Form -->
+            <form id="contactForm" class="mt-4">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar para WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Madson Damasceno. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para enviar mensagem para WhatsApp -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir o envio do formulário tradicional
+
+            // Coletar valores dos campos do formulário
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            // Número de WhatsApp para envio (seu número com código do país)
+            const whatsappNumber = '5591984868651';
+
+            // Criar a mensagem
+            const whatsappMessage = `Nome: ${name}%0AEmail: ${email}%0ATelefone: ${phone}%0AMensagem: ${message}`;
+
+            // Criar o link de envio para o WhatsApp
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+            // Redirecionar o usuário para o link do WhatsApp
+            window.open(whatsappLink, '_blank');
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
